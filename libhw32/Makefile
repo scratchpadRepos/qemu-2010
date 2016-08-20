@@ -1,0 +1,1 @@
+/home/ub/development/qemu-2010/Makefile.hw
