@@ -119,13 +119,17 @@ void uuid_unparse(const uuid_t uu, char *out);
 #if !defined(CONFIG_UUID)
 void uuid_generate(uuid_t out)
 {
-    memset(out, 0, sizeof(out));
+//int size=sizeof(out);
+int size=16; //TODO: sahil hack
+    memset(out, 0,size);
 }
 
 int uuid_is_null(const uuid_t uu)
-{
-    uuid_t null_uuid = { 0 };
-    return memcmp(uu, null_uuid, sizeof(uu)) == 0;
+{	int size=0;
+   	 uuid_t null_uuid = { 0 };
+//	size=sizeof(uu);
+	size=16; //TODO: sahil hack
+    	return memcmp(uu, null_uuid, size) == 0;
 }
 
 void uuid_unparse(const uuid_t uu, char *out)

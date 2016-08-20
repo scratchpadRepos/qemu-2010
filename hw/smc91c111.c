@@ -164,6 +164,7 @@ static void smc91c111_do_tx(smc91c111_state *s)
     int packetnum;
     uint8_t *p;
 
+	if(0){add_crc=add_crc;}	//TODO: sack sahil
     if ((s->tcr & TCR_TXEN) == 0)
         return;
     if (s->tx_fifo_len == 0)
